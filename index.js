@@ -1,5 +1,9 @@
-
-
+// let products =[]
+// let productJ=JSON.stringify(products)
+// localStorage.setItem('products',productJ)
+if (!localStorage.getItem("products")) {
+  localStorage.setItem("products", JSON.stringify([]));
+}
 
 let prodcutsFromLocal = localStorage.getItem('products')
 let FinalProducts = JSON.parse(prodcutsFromLocal)
