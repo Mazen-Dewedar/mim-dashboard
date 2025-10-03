@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hbl {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.804);
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .form {
+    padding: 1rem;
+    background-color: white;
+    height: 300px;
+    width: 500px;
+    z-index: 50;
+    border-radius: 1rem;
+  }
+}

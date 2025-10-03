@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <button style="margin: 1rem;" class="btn btn-primary" onclick="showProducts()">Show products</button>
+      <button style="margin: 1rem;" class="btn btn-success" onclick="openWindow()">Add phone</button>
+      <table class="table table-dark">
+        <thead>
+          <th>#</th>
+          <th>name</th>
+          <th>price</th>
+          <th>quantity</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div onclick="closeWindow()" class="hbl d-none justify-content-center align-items-center">
+      <div onclick="event.stopPropagation()" class="form d-flex justify-content-between flex-column align-items-center">
+        <p style="font-weight: bold;font-size: 1.2rem;">Add phone</p>
+        <input class="input form-control" type="text" name="name" id="name" placeholder="Phone name">
+        <input class="input form-control" type="number" name="price" id="price" placeholder="Phone price">
+        <input class="input form-control" type="number" name="qty" id="qty" placeholder="Phone quantity">
+        <button style="width: 100%;" onclick="addPhone()" class="btn btn-success">Add phonne</button>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./index.js"></script>
+
+  </body>
+  </html>
