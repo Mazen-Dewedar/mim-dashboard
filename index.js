@@ -20,9 +20,9 @@ let showProducts = () => {
           <th>${el.price}</th>
           <th>${el.qty}</th>
           <th>
-          <div>
-          <button class="btn btn-warning" onclick="editProduct(${index})">Edit</button>
-          <button class="btn btn-danger" onclick="deleteProduct(${index})">Delete</button>
+          <div class="d-flex flex-row gap-1">
+          <button class="btn btn-warning btn-sm btn-md-lg" onclick="editProduct(${index})">Edit</button>
+          <button class="btn btn-danger btn-sm btn-md-lg" onclick="deleteProduct(${index})">Delete</button>
           </div></th>
         </tr>
         `
