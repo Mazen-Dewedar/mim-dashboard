@@ -1,18 +1,11 @@
-// let products=[
-//   {
-//     name:'iphone x',
-//     price:1200,
-//     qty:3
-//   }
-// ]
-// let productsJ=JSON.stringify(products);
-// localStorage.setItem('products',productsJ)
+
 
 
 let prodcutsFromLocal = localStorage.getItem('products')
 let FinalProducts = JSON.parse(prodcutsFromLocal)
 let table = document.querySelector('.container table tbody')
 console.log(prodcutsFromLocal)
+let productIndex=null;
 let showProducts = () => {
   table.innerHTML = ''
   FinalProducts.forEach((el, index) => {
@@ -54,6 +47,7 @@ let deleteProduct = (index) => {
     }
   });
 }
+
 let modal = document.querySelector('.hbl')
 let Name = document.querySelector('#name')
 let Price = document.querySelector('#price')
@@ -85,3 +79,44 @@ let addPhone = () => {
   showProducts();
 }
 
+
+
+
+let Name2 = document.querySelector('#name2')
+let Price2 = document.querySelector('#price2')
+let Qty2 = document.querySelector('#qty2')
+let edit = document.querySelector('.edit')
+
+let closeWindow2 = () => {
+  edit.classList.replace('d-flex', 'd-none')
+}
+
+let editProduct = (index) => {
+  productIndex=index;
+  edit.classList.replace('d-none', 'd-flex')
+  let productWithIndex = FinalProducts[index];
+  Name2.value = productWithIndex.name
+  Price2.value = productWithIndex.price
+  Qty2.value = productWithIndex.qty
+}
+
+let editPhone = () => {
+  let productEdit=
+    {
+      name: Name2.value,
+      price: +Price2.value,
+      qty: +Qty2.value,
+    }
+    FinalProducts[productIndex]=productEdit;
+    localStorage.setItem("products",JSON.stringify(FinalProducts))
+    Name2.value='';
+    Price2.value='';
+    Qty2.value='';
+    swal.fire({
+      title: 'Phone edit',
+      icon: "success",
+      text: "The product was edited successfully"
+    });
+  closeWindow2();
+  showProducts();
+}

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.hbl {
+.hbl , .edit {
   height: 100vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.804);
@@ -12,7 +12,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  .form {
+
+  .form , .form2 {
     padding: 1rem;
     background-color: white;
     height: 300px;
@@ -20,4 +21,16 @@
     z-index: 50;
     border-radius: 1rem;
   }
+}
+
+table{
+    @media screen and (max-width:500px) {
+        font-size: 10px;
+    }
+    button{
+        @media screen and (max-width:767px) {
+            font-size: 8px;
+        }
+
+    }
 }
